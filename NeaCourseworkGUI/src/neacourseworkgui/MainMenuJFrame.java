@@ -60,6 +60,11 @@ public class MainMenuJFrame extends javax.swing.JFrame {
         });
 
         jButton2.setText("LEADERBOARD");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
 
         jButton3.setText("SETTINGS");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
@@ -69,6 +74,11 @@ public class MainMenuJFrame extends javax.swing.JFrame {
         });
 
         jButton4.setText("START GAME");
+        jButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton4ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -106,13 +116,28 @@ public class MainMenuJFrame extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        //close game
         System.exit(0);
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        //setting screen
         frame.dispose();
+        SettingJFrame settingScreen = new SettingJFrame();
+        settingScreen.setVisible(true);
         
     }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        //leaderboard screen
+        frame.dispose();
+        LeaderboardJFrame LeaderBoard = new LeaderboardJFrame();
+        LeaderBoard.setVisible(true);
+    }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+        //start game
+    }//GEN-LAST:event_jButton4ActionPerformed
 
 
     public static void main(String args[]) {

@@ -2,6 +2,8 @@ package neacourseworkgui;
 
 import java.awt.Color;
 import java.util.HashMap;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 
@@ -171,7 +173,7 @@ public class LoginScreenJFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_jTextField1ActionPerformed
 
     private void jPasswordField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jPasswordField1ActionPerformed
-        
+
     }//GEN-LAST:event_jPasswordField1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
@@ -188,6 +190,22 @@ public class LoginScreenJFrame extends javax.swing.JFrame {
             }
         });
     }
+    public static boolean ValidPasswordCheck(String password) {
+        //password must contain: 1 symbol, 1 number, 1 upper case, and be at least 8 characters long
+        //checks it has the valid requirements
+        String regex = "^(?=.*[0-9])" + "(?=.*[A-Z])" + "(?=.*@$£&!-_)" + "(\\S+$).{8,25}";
+
+        Pattern p = Pattern.compile(regex);
+        //if password is empty return false
+        if (password == null) {
+            return false;
+        }
+        //used to find match between password entered and regular expression
+        Matcher m = p.matcher(password);
+        //return if the password matched the regex
+        return m.matches();
+
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel BottomBorder;
@@ -199,4 +217,6 @@ public class LoginScreenJFrame extends javax.swing.JFrame {
     private javax.swing.JPasswordField jPasswordField1;
     private javax.swing.JTextField jTextField1;
     // End of variables declaration//GEN-END:variables
+
+    
 }
